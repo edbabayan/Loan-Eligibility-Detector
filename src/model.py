@@ -27,6 +27,10 @@ class LoanabilityDetector:
                                                             random_state=0)
         return X_train, X_test, y_train, y_test
 
+    def predict(self, applicant_info):
+        prediction = self.model.predict(applicant_info)
+        return prediction
+
 
 if __name__ == '__main__':
     from src.config import CFG
@@ -44,7 +48,7 @@ if __name__ == '__main__':
     _model.train(_train_df, _y_train)
     print(_model.evaluate())
 
-    CFG.trained_models.mkdir(exist_ok=True, parents=True)
+    CFG.trained_models_dir.mkdir(exist_ok=True, parents=True)
 
-    joblib.dump(_model, CFG.trained_models.joinpath('loanability_detector.pkl'))
+    joblib.dump(_model, CFG.trained_models_dir.joinpath('loanability_detector.pkl'))
 
