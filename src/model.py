@@ -51,4 +51,3 @@ if __name__ == '__main__':
     CFG.trained_models_dir.mkdir(exist_ok=True, parents=True)
 
     joblib.dump(_model, CFG.trained_models_dir.joinpath('loanability_detector.pkl'))
-
