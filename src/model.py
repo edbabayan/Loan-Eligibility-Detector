@@ -34,8 +34,8 @@ class LoanabilityDetector:
 
 if __name__ == '__main__':
     from src.config import CFG
-    from src.data_analysis import DataAnalysis
-    from src.preprocessing import Preprocessor
+    from src.processing.data_analysis import DataAnalysis
+    from src.processing.preprocessing import Preprocessor
 
     analyzer = DataAnalysis(CFG.data_dir.joinpath('train.csv'), CFG.data_dir.joinpath('test.csv'),
                                                                   'Loan_Status')
@@ -51,4 +51,4 @@ if __name__ == '__main__':
 
     CFG.trained_models_dir.mkdir(exist_ok=True, parents=True)
 
-    joblib.dump(_model, CFG.trained_models_dir.joinpath('loanability_detector.pkl'))
+    joblib.dump(_model, CFG.trained_models_dir.joinpath(CFG.MODEL_NAME))
