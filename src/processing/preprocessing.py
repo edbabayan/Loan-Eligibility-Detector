@@ -49,7 +49,7 @@ class Preprocessor:
 
 if __name__ == '__main__':
     from src.config import CFG
-    from src.data_analysis import DataAnalysis
+    from src.processing.data_analysis import DataAnalysis
 
     analyzer = DataAnalysis(CFG.data_dir.joinpath('train.csv'), CFG.data_dir.joinpath('test.csv'),
                                                                   'Loan_Status')
