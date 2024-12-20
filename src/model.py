@@ -39,6 +39,7 @@ if __name__ == '__main__':
 
     analyzer = DataAnalysis(CFG.data_dir.joinpath('train.csv'), CFG.data_dir.joinpath('test.csv'),
                                                                   'Loan_Status')
+
     cleaned_train, cleaned_test, _y_train = analyzer.get_cleaned_dataframes()
 
     processor = Preprocessor(cleaned_train, cleaned_test)
