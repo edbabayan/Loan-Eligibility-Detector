@@ -81,10 +81,3 @@ class DataAnalysis:
         self.drop_duplicates()
         self.impute_missing_values()
         return self.train_df, self.test_df, self.train_y
-
-
-if __name__ == '__main__':
-    analysis = DataAnalysis(CFG.data_dir.joinpath('train.csv'), CFG.data_dir.joinpath('test.csv'),
-                                                                  'Loan_Status')
-    cleaned_train, cleaned_test, y_train = analysis.get_cleaned_dataframes()
-    print('')
