@@ -1,0 +1,9 @@
+include *.py
+include *.md
+include *.txt
+
+recursive-include src/*
+
+include data/*.csv
+include trained_models/*.pkl
+include VERSION
